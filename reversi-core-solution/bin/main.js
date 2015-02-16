@@ -7,6 +7,6 @@ var reader = readline.createInterface({
 });
 
 var game = new Reversi.Game(reader);
-game.run(reader, function () {
+game.play(reader, function () {
   reader.close();
 });

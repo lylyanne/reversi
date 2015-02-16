@@ -208,7 +208,7 @@ Board.prototype.validMoves = function (color) {
 
 module.exports = Board;
 
-},{"./piece":3}],2:[function(require,module,exports){
+},{"./piece":4}],2:[function(require,module,exports){
 (function (process){
 var readline = require("readline");
 var Piece = require("./piece.js");
@@ -291,7 +291,14 @@ Game.prototype.runLoop = function (overCallback) {
 module.exports = Game;
 
 }).call(this,require('_process'))
-},{"./board.js":1,"./piece.js":3,"_process":5,"readline":4}],3:[function(require,module,exports){
+},{"./board.js":1,"./piece.js":4,"_process":6,"readline":5}],3:[function(require,module,exports){
+module.exports = {
+  Board: require("./board"),
+  Game: require("./game"),
+  Piece: require("./piece")
+};
+
+},{"./board":1,"./game":2,"./piece":4}],4:[function(require,module,exports){
 /**
  * Initializes the Piece with its color.
  */
@@ -330,9 +337,9 @@ Piece.prototype.toString = function () {
 
 module.exports = Piece;
 
-},{}],4:[function(require,module,exports){
-
 },{}],5:[function(require,module,exports){
+
+},{}],6:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -391,5 +398,5 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[2])(2)
+},{}]},{},[3])(3)
 });

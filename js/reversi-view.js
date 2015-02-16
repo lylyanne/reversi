@@ -41,7 +41,19 @@
   // };
 
   View.prototype.render = function () {
-    this.$el.append('<p>Hello</p>');
+    for (var i = 0; i < 8; i++) {
+      for (var j = 0; j < 8; j++) {
+        var $div = $("<div class='tile'>");
+        $div.data("pos", [i, j]);
+
+        if (this.game.board.isOccupied([i,j])) {
+          var $circle = $("<div class='circle'></div>");
+          $circle.addClass(this.game.board.grid[i][j].color);
+          $div.append($circle);
+        }
+        this.$el.append($div);
+      }
+    }
   };
 
   // View.prototype.restartGame = function () {

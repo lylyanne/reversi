@@ -1,0 +1,28 @@
+.main {
+  width: 900px;
+  margin: 100px auto;
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border: 5px solid black;
+  float: left;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 45px;
+  -moz-border-radius: 45px;
+  border-radius: 45px;
+}
+
+.white {
+  background-color: white;
+}
+
+.black {
+  background-color: black;
+}
