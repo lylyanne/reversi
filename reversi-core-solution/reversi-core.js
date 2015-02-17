@@ -61,7 +61,7 @@ Board.prototype.hasMove = function (color) {
 Board.prototype.isFull = function () {
   for (var i=0; i<8; i++) {
     for (var j=0; j<8; j++) {
-      if (this.grid[i][i] === undefined) { return false; }
+      if (this.grid[i][j] === undefined) { return false; }
     }
   }
 
@@ -98,8 +98,8 @@ Board.prototype.isOccupied = function (pos) {
  * the black player are out of moves.
  */
 Board.prototype.isOver = function () {
-  return this.validMoves("white").length == 0 &&
-         this.validMoves("black").length == 0;
+  return (this.validMoves("white").length == 0 &&
+         this.validMoves("black").length == 0);
 };
 
 /**
@@ -204,6 +204,33 @@ Board.prototype.validMoves = function (color) {
   }
 
   return moves;
+};
+
+/**
+ * Find the winning color.
+ */
+Board.prototype.winner = function () {
+  var white = 0, black = 0;
+
+  for (var i=0; i< 8; i++) {
+    for (var j=0; j< 8; j++) {
+      if (this.isOccupied([i,j])) {
+        if (this.grid[i][j].color === "white") {
+          white = white + 1;
+        } else {
+          black = black + 1;
+        }
+      }
+    }
+  }
+
+  if (white > black) {
+    return "white";
+  } else if (white < black) {
+    return "black";
+  } else {
+    return "none";
+  }
 };
 
 module.exports = Board;
