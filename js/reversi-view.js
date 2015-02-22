@@ -36,7 +36,7 @@
       $div.append($circle);
       this.game._flipTurn();
       this.render();
-    
+
       if (this.game.board.isOver() || this.game.board.isFull()) {
         var winning_color = this.game.board.winner();
         winning_color === "none" ?
@@ -50,7 +50,7 @@
 
   View.prototype.render = function () {
     this.$el.empty();
-    this.$el.append("<h3>" + this.game.turn +"'s turn </h3>")
+    this.$el.append("<h5>" + this.game.turn +"'s turn </h5>")
     for (var i = 0; i < 8; i++) {
       for (var j = 0; j < 8; j++) {
         var $div = $("<div class='tile'>");
