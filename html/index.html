@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Reversi</title>
+  <link rel="stylesheet" type="text/css" href="../css/reversi.css">
+</head>
+<body>
+
+  <h3>Reversi</h3>
+
+  <div class="main group"></div>
+
+  <button class="play-again">Play Again</button>
+
+  <script src="../js/jquery-2.1.1.js"></script>
+  <!-- Whackjobs at GithubPages don't understand symlinks... -->
+  <script src="../reversi-core-solution/reversi-core.js"></script>
+  <script src="../js/reversi-view.js"></script>
+
+  <script>
+  $(function () {
+    var game = new Reversi.Game();
+    var reversi = new Reversi.View(game, $(".main"));
+  });
+  </script>
+</body>
+</html>
